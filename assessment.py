@@ -14,11 +14,11 @@ Part 1: Discussion
 
 3. What is an instance attribute?
 
-    An instance attribute is
+    An instance attribute is a 
 
 4. What is a method?
 
-    A method is
+    A method is a function that lives with a class and is accessible to all of the class's subclasses.
 
 5. What is an instance in object orientation?
 
@@ -41,5 +41,26 @@ Part 1: Discussion
 """
 
 
-# Parts 2 through 5:
-# Create your classes and class methods
+# Part 2
+class Student(object):
+    """A student class, takes a first name, last name, and address as arguments.
+    """
+    def __init__(self, first_name, last_name, address):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.address = address
+
+class Question(object):
+    """A question class, takes a question and a correct answer as arguments.
+    """
+    def __init__(self, question, answer):
+        self.question = question
+        self.correct_answer = answer
+
+class Exam(object):
+    """An exam class, takes an exam name as an argument.
+    """
+    def __init__(self, name):
+        self.name = name
+        self.questions = []
+
