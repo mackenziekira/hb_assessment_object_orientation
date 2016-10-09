@@ -4,25 +4,25 @@ Part 1: Discussion
 1. What are the three main design advantages that object orientation
    can provide? Explain each concept.
 
-    1) Abstraction:
-    2) Polymorphism:
-    3) Compartmentalization/Bundling: 
+    1) Abstraction: The inner machinery of how something is done is hidden away/compartmentalized, so if a person wants to use a class/its information/its methods, the person doesn't have to know how they are handled internally, they just have to know about the inputs and outputs, and what attributes and methods are available to them as a programmer.
+    2) Polymorphism: With subclasses and the possibility of instance attributes, you can easily make similar types of 'things' that have slightly different/unique attributes and methods without having to copy and paste the same code in a bunch of places, but rather by referencing a single class that contains in one place the information the subclasses or instances share.
+    3) Encapsulation: Information/data (attributes) is bundled with specific stuff you can do to that information (methods). 
 
 2. What is a class?
     
-    A class is
+    A class is a grouping of attributes and methods that will be shared either by instances created from that class, or inherited by subclasses beneath that class.
 
 3. What is an instance attribute?
 
-    An instance attribute is a 
+    An instance attribute is an attribute that exists on that particular instance of a class. They can be set during instantiation, by including them in the init method, or they can be added once the class has been instantiated. If it shares a name with a class attribute from the class from which the instance was derived, the instance attribute would take precedence over the class attribute or any parent class attribute by the same name when Python is looking for the value belonging to the attribute.
 
 4. What is a method?
 
-    A method is a function that lives with a class and is accessible to all of the class's subclasses.
+    A method is a function that lives with a class and is accessible to all of the class's subclasses and all of the class's instances. It is not a function that can be called anywhere in a program, but rather it must be called on an instance of the class from which it was derived. A method takes <i>self</i> as an argument, <i>self</i> being the instance of the class that the method is being called on. For an instance to call a method, the method must be defined either in the class from which the instance was derived, or in one of that class's parent classes.
 
 5. What is an instance in object orientation?
 
-    An instance is
+    An instance is an occurance of a class. It can reference any of its parent class's methods and attributes.
 
 6. How is a class attribute different than an instance attribute?
    Give an example of when you might use each.
