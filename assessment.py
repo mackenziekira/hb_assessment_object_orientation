@@ -41,7 +41,8 @@ Part 1: Discussion
 """
 
 
-# Part 2
+# Part 2: classes and init methods
+
 class Student(object):
     """A student class, takes a first name, last name, and address as arguments.
     """
@@ -55,7 +56,16 @@ class Question(object):
     """
     def __init__(self, question, answer):
         self.question = question
-        self.correct_answer = answer
+        self.answer = answer
+
+    def ask_and_evaluate(self):
+        """asks user the question, returns true or false based on answer
+        """
+        answer = raw_input(self.question + " > ")
+        if answer == self.answer:
+            return True
+        return False
+
 
 class Exam(object):
     """An exam class, takes an exam name as an argument.
@@ -63,4 +73,46 @@ class Exam(object):
     def __init__(self, name):
         self.name = name
         self.questions = []
+
+    def add_question(self, question, answer):
+        """Adds a question and answer to the exam
+        """
+        self.questions.append(Question(question, answer))
+
+    def administer(self):
+        """Administers all exam questions, returns score at end.
+        """
+        score = 0.0
+        for question in self.questions:
+            add_point = question.ask_and_evaluate()
+            if add_point:
+                score += 1.0
+        return score
+
+
+# Part 3: methods
+# Part 4: Create and exam
+def take_test(exam, student):
+    """Takes an exam and a student as parameters, administers exam, assigns student score.
+    """
+    student.score = exam.administer()
+
+def example():
+    """Creates an exam and a student, administers text for student.
+    """
+    exam = Exam('example exam')
+    exam.add_question('what is your name?', 'sir lancelot of camelot')
+    exam.add_question('what is your quest?', 'to seek the holy grail')
+    exam.add_question('what is your favorite color?', 'blue')
+    exam.add_question('what is the capital of Assyria?', 'Nineveh')
+    exam.add_question('what is the airspeed velocity of an unladen swallow?', 'an African or European swallow?')
+    student = Student('Sir Lancelot', "of Camelot", "12307 Camel Lot Lane")
+    take_test(exam, student)
+    #return exam, student
+
+# Part 5: Inheritance
+
+
+
+
 
