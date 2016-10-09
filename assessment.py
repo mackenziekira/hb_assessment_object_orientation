@@ -108,9 +108,18 @@ def example():
     exam.add_question('what is the airspeed velocity of an unladen swallow?', 'an African or European swallow?')
     student = Student('Sir Lancelot', "of Camelot", "12307 Camel Lot Lane")
     take_test(exam, student)
-    #return exam, student
+    return exam, student
 
 # Part 5: Inheritance
+class Quiz(Exam):
+    """subclass of Exam, returns true if you answer at least half the questions correctly.
+    """
+    def administer(self):
+        """Administers quiz"""
+        score = super(Quiz, self).administer()
+        if score >= len(self.questions) /  2.0:
+            return True
+        return False
 
 
 
